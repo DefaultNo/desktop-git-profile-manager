@@ -19,7 +19,7 @@ export default tseslint.config(
       'tailwind.config.*',
       'stylelint.config.*',
       'lint-staged.config.*',
-      'src/app/typings/**/*.d.ts',
+      'src/renderer/app/typings/**/*.d.ts',
     ],
   },
   {

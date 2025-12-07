@@ -9,7 +9,7 @@
     "allowImportingTsExtensions": false,
 
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/renderer/*"]
     }
   },
   "include": ["src"]

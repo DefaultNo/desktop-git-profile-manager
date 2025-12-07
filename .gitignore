@@ -26,6 +26,8 @@ lerna-debug.log*
 dist/
 dist-ssr/
 /build/
+/build-react/
+/build-electron/
 *.local
 
 # Config

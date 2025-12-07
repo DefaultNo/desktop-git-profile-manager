@@ -12,6 +12,8 @@ export function createViteConfig(mode: string): UserConfig {
   const { port, previewPort } = parsePorts(env);
 
   return {
+    base: './',
+
     envPrefix: ['VITE_', 'APP_'],
 
     server: createServerConfig(environment, env, port),

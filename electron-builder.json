@@ -1,0 +1,14 @@
+{
+  "appId": "com.git-profile-manager",
+  "files": ["build-electron", "build-react"],
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
+  },
+  "win": {
+    "target": ["portable", "msi"]
+  }
+}

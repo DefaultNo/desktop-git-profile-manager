@@ -11,8 +11,8 @@ import {
 } from './utils'
 
 const CONFIG = {
-	themesDir: 'src/app/styles/themes',
-	outputDir: 'src/shared/lib/hooks/theme-utilities',
+	themesDir: 'src/renderer/app/styles/themes',
+	outputDir: 'src/renderer/shared/lib/hooks/theme-utilities',
 	typesFileName: 'theme-colors.types.ts',
 	hooksFileName: 'theme-colors.hooks.ts',
 	indexFileName: 'index.ts',

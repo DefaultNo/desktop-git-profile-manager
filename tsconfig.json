@@ -3,7 +3,8 @@
   "extends": "./tsconfig.base.json",
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.vite.json" }
+    { "path": "./tsconfig.vite.json" },
+    { "path": "./tsconfig.electron.json" }
   ],
   "compilerOptions": {
     "baseUrl": ".",

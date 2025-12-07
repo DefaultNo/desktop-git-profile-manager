@@ -1,0 +1,12 @@
+@use '../../mixins/mixins' as mixins;
+
+:root {
+  @include mixins.setRem(--button-size-small,   36);
+  @include mixins.setRem(--button-size-medium,  40);
+  @include mixins.setRem(--button-size-large,   44);
+
+  /* button icon */
+  @include mixins.setRem(--button-icon-size-small,   36);
+  @include mixins.setRem(--button-icon-size-medium,  40);
+  @include mixins.setRem(--button-icon-size-large,   44);
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "types": ["vite/client", "vite-plugin-svgr/client"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "vite.config.ts"
+  ]
+}

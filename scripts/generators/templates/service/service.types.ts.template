@@ -1,0 +1,10 @@
+export interface I{{componentNamePascal}}ServiceConfig {
+	config: string
+}
+
+export interface I{{componentNamePascal}}ServiceResult {
+	config:  ITestServiceConfig
+    success: boolean
+    data:    unknown
+    error?:  string
+}

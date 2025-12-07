@@ -1,0 +1,20 @@
+echo "[INFO]: Running pre-push checks..."
+
+echo "[INFO]: Running lint-staged"
+yarn lint
+
+if [ $? -ne 0 ]; then
+    echo "[ERROR]: Linting failed. Please fix the errors before pushing."
+    exit 1
+fi
+
+echo "[INFO]: Running unit tests..."
+yarn test:vitest
+
+if [ $? -ne 0 ]; then
+    echo "[ERROR]: Tests failed. Please fix the failing tests before pushing."
+    exit 1
+fi
+
+echo "[INFO]: All pre-push checks passed!"
+exit 0

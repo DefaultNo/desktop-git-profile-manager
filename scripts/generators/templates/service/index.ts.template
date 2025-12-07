@@ -1,0 +1,4 @@
+export {
+	{{componentNamePascal}}Service,
+} from './{{componentNameKebab}}.service'
+export type * from './{{componentNameKebab}}.types'

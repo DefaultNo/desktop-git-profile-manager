@@ -1,0 +1,25 @@
+import {
+	describe,
+	expect,
+	it,
+} from 'vitest'
+import {
+	render,
+} from 'vitest-browser-react'
+
+import {{componentNamePascal}} from '../{{componentNameKebab}}.component'
+
+describe('{{componentNamePascal}}', () => {
+	it('should render children', () => {
+		const testContent = 'Test Content'
+		const screen = render(<{{componentNamePascal}}>{testContent}</{{componentNamePascal}}>)
+		
+		expect(screen.getByText(testContent)).toBeInTheDocument()
+	})
+
+	it('should render component', () => {
+		const screen = render(<{{componentNamePascal}}>Content</{{componentNamePascal}}>)
+		
+		expect(screen.getByText('Content')).toBeInTheDocument()
+	})
+})

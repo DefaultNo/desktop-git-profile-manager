@@ -1,0 +1,28 @@
+BRANCH_NAME="$(git rev-parse --abbrev-ref HEAD)"
+VALID_BRANCH_REGEX='^((feat|fix|ref|docs|test|chore|ci|revert)\/[a-zA-Z0-9\-]+)$'
+if [[ ! $BRANCH_NAME =~ $VALID_BRANCH_REGEX ]]; then
+    echo "There is something wrong with your branch name. Branch names in this project must follow the pattern: $VALID_BRANCH_REGEX. Your commit will be rejected. You should rename your branch to a valid name and try again."
+    exit 1
+fi
+
+CHANGED_FILES=$(git diff --cached --name-only --diff-filter=ACMRTUXB \
+    | grep -E "^src/.*\.(ts|tsx)$" \
+    | grep -v -E "^src/[^/]+\.(ts|tsx)$" || true)
+
+VALID_FILENAME_REGEX='^[^.]+\.[^.]+\.(ts|tsx)$'
+ASYNC_FILENAME_REGEX='^[^.]+\.[^.]+\.async\.(ts|tsx)$'
+
+for file in $CHANGED_FILES; do
+    FILENAME=$(basename "$file")
+    [ -z "$file" ] && continue
+
+    if [[ ! $FILENAME =~ $VALID_FILENAME_REGEX ]] && [[ ! $FILENAME =~ $ASYNC_FILENAME_REGEX ]] && [[ "$FILENAME" != "index.ts" ]] && [[ "$FILENAME" != "index.tsx" ]]; then
+        echo "Invalid file name: $FILENAME. The file name must follow the pattern: {name}.{module}.{ts/tsx} or {name}.{module}.async.{ts/tsx}, except for index.ts(x) files. Your commit will be rejected. You should rename your files to a valid name and try again."
+        exit 1
+    fi
+done
+
+yarn lint-staged
+yarn type-check
+
+exit 0

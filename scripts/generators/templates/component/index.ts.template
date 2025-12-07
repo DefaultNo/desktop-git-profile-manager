@@ -1,0 +1,4 @@
+export {
+	default as {{componentNamePascal}},
+} from './{{componentNameKebab}}.component'
+export type * from './{{componentNameKebab}}.types'

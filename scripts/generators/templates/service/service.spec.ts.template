@@ -1,0 +1,29 @@
+import {
+	describe,
+	expect,
+	it,
+} from 'vitest'
+
+import {
+	{{componentNamePascal}}Service,
+} from '../{{componentNameKebab}}.service'
+
+describe('{{componentNamePascal}}Service', () => {
+	it('should execute successfully', () => {
+		const service = new {{componentNamePascal}}Service({
+		    config: 'config',
+		})
+
+		const result = service.execute()
+
+		expect(result.success).toBe(true)
+	})
+
+	it('should handle configuration', () => {
+		const service = new {{componentNamePascal}}Service({
+		    config: 'config',
+		})
+
+		expect(service).toBeInstanceOf({{componentNamePascal}}Service)
+	})
+})

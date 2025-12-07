@@ -1,0 +1,20 @@
+import type {
+	I{{componentNamePascal}}ServiceConfig,
+	I{{componentNamePascal}}ServiceResult,
+} from './{{componentNameKebab}}.types'
+
+export class {{componentNamePascal}}Service {
+	private readonly config: I{{componentNamePascal}}ServiceConfig
+
+	constructor(config: I{{componentNamePascal}}ServiceConfig) {
+		this.config = config
+	}
+
+	public execute(): I{{componentNamePascal}}ServiceResult {
+		return {
+            config:  this.config,
+            success: true,
+            data:    null,
+        }
+	}
+}

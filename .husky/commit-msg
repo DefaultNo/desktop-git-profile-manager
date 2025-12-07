@@ -1,0 +1,42 @@
+COMMIT_MSG="$(cat $1)"
+FIRST_LINE=$(echo "$COMMIT_MSG" | head -n1)
+COMMIT_MSG_REGEX='^(feat|fix|ref|docs|test|perf|chore|ci|revert)(\([a-zA-Z0-9_/-]{1,20}\))?!?: [A-Z][a-zA-Z0-9\s\-_]+'
+
+if [ -z "COMMIT_MSG" ]; then
+  echo "[ERROR]: Commit message cannot be empty"
+  exit 1
+fi
+
+if [ ${#COMMIT_MSG} -lt 5 ]; then
+  echo "[ERROR]: Commit message should be at least 5 characters long"
+  exit 1
+fi
+
+if ! echo "$FIRST_LINE" | grep -E "$COMMIT_MSG_REGEX" >/dev/null 2>&1; then
+  echo "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+  echo "┃ Aborting commit. Your commit message does not match the required format.             ┃"
+  echo "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
+  echo "┃ Commit message should start with feat|fix|ref|docs|test|perf|chore|ci|revert,        ┃"
+  echo "┃ optionally followed by a scope in parentheses (max 20 characters),                   ┃"
+  echo "┃ optionally followed by ! for breaking changes,                                       ┃"
+  echo "┃ followed by a colon and space, and then a message starting with a capital letter.    ┃"
+  echo "┃ Body and footer lines are allowed after the subject line.                            ┃"
+  echo "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
+  echo "┃ Examples:                                                                            ┃"
+  echo "┃ feat: Some new feature                                                               ┃"
+  echo "┃ feat(auth): Login functionality                                                      ┃"
+  echo "┃ feat!: Breaking change                                                               ┃"
+  echo "┃ ref(src/main): Test commit                                                           ┃"
+  echo "┃ chore(lint-staged): Update configuration                                             ┃"
+  echo "┃                                                                                      ┃"
+  echo "┃ Multi-line example:                                                                  ┃"
+  echo "┃ feat: Add user authentication                                                        ┃"
+  echo "┃                                                                                      ┃"
+  echo "┃ Add JWT-based authentication with refresh tokens.                                    ┃"
+  echo "┃ Includes login, logout, and token refresh endpoints.                                 ┃"
+  echo "┃                                                                                      ┃"
+  echo "┃ Closes #123                                                                          ┃"
+  echo "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+
+  exit 1
+fi

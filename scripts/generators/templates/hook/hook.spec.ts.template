@@ -1,0 +1,26 @@
+import {
+	describe,
+	expect,
+	it,
+} from 'vitest'
+import {
+	renderHook,
+} from 'vitest-browser-react'
+
+import {
+	{{componentNameCamel}},
+} from '../{{componentNameKebab}}.hook'
+
+describe('{{componentNameCamel}}', () => {
+	it('should return hook result', () => {
+		const {
+		    result,
+		} = renderHook(() => {
+		    return {{componentNameCamel}}({
+		        options: '',
+		    })
+		})
+
+		expect(result.current).toBeDefined()
+	})
+})

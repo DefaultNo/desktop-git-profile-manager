@@ -1,0 +1,37 @@
+@use '../mixins/mixins' as mixins;
+
+:root {
+  --font-family-base: 'Roboto';
+
+  /* font-size */
+  @include mixins.setRem(--font-size-heading-large,  32);
+  @include mixins.setRem(--font-size-heading-medium, 27);
+  @include mixins.setRem(--font-size-heading-small,  24);
+  @include mixins.setRem(--font-size-body-large,     21);
+  @include mixins.setRem(--font-size-body-medium,    18);
+  @include mixins.setRem(--font-size-body-small,     16);
+  @include mixins.setRem(--font-size-body-x-small,   14);
+  @include mixins.setRem(--font-size-body-xs-small,  12);
+
+  /* lint-height */
+  --text-line-height-100:    1;
+  --text-line-height-105: 1.05;
+  --text-line-height-110:  1.1;
+  --text-line-height-115: 1.15;
+  --text-line-height-120:  1.2;
+  --text-line-height-125: 1.25;
+  --text-line-height-130:  1.3;
+  --text-line-height-135: 1.35;
+  --text-line-height-140:  1.4;
+  --text-line-height-145: 1.45;
+  --text-line-height-150:  1.5;
+
+  /* font-weight */
+  --font-weight-light:      300;
+  --font-weight-regular:    400;
+  --font-weight-medium:     500;
+  --font-weight-semibold:   600;
+  --font-weight-bold:       700;
+  --font-weight-extra-bold: 800;
+  --font-weight-heavy:      900;
+}

@@ -1,0 +1,15 @@
+@use '../mixins/mixins' as mixins;
+
+:root {
+  @include mixins.setRem(--base-spacing-0,  0);
+  @include mixins.setRem(--base-spacing-1,  5);
+  @include mixins.setRem(--base-spacing-2,  10);
+  @include mixins.setRem(--base-spacing-3,  15);
+  @include mixins.setRem(--base-spacing-4,  20);
+  @include mixins.setRem(--base-spacing-5,  25);
+  @include mixins.setRem(--base-spacing-6,  30);
+  @include mixins.setRem(--base-spacing-7,  35);
+  @include mixins.setRem(--base-spacing-8,  40);
+  @include mixins.setRem(--base-spacing-9,  45);
+  @include mixins.setRem(--base-spacing-10, 50);
+}

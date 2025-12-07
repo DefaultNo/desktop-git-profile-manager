@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "extends": "./tsconfig.base.json",
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.vite.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+  }
+}

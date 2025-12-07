@@ -1,0 +1,12 @@
+import type {
+	I{{componentNamePascal}}HookOptions,
+	I{{componentNamePascal}}HookResult,
+} from './{{componentNameKebab}}.types'
+
+export const {{componentNameCamel}} = (
+	options: I{{componentNamePascal}}HookOptions,
+): I{{componentNamePascal}}HookResult => {
+    return {
+        options,
+    }
+}

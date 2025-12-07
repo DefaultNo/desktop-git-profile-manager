@@ -1,0 +1,13 @@
+@use '../variables/colors.scss' as *;
+@use '../mixins/mixins' as *;
+
+[data-theme='dark'] {
+  --primary-color: #0f8364;
+  --on-primary-color: #fff;
+
+  /* surface */
+  --surface-color: #212529;
+  --on-surface-color: #fff;
+
+  @include generate-color-vars($neutral-colors, 'neutral-color-');
+}

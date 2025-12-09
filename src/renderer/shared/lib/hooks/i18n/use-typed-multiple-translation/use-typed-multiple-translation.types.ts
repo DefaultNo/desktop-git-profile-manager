@@ -12,7 +12,7 @@ import type {
 
 export interface ITypedMultipleTranslationReturn<TNamespace extends keyof Resources> {
 	getNamespaceT: <TSelectedNamespace extends TNamespace>(
-		selectedNamespace: TSelectedNamespace
+		selectedNamespace: TSelectedNamespace,
 	) => TypedTFunction<TSelectedNamespace>
 	i18n:       ReturnType<typeof useTranslation>['i18n']
 	t:          NamespacedTFunction

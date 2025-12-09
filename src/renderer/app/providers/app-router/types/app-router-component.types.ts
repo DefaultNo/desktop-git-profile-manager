@@ -10,5 +10,5 @@ export type RenderRouteFn = (
 	route: AppRouteProps,
 	parentAuthOnly?: boolean,
 	parentGuestOnly?: boolean,
-	keyPrefix?: string
+	keyPrefix?: string,
 ) => JSX.Element

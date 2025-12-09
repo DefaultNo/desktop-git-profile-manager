@@ -13,8 +13,9 @@ app.on('ready', () => {
 	})
 
 	if (process.env['NODE_ENV'] === 'development') {
-		window.loadURL(`http://localhost:${process.env['VITE_PORT']}`)
-	} else {
+		window.loadURL(`http://localhost:3000`)
+	}
+	else {
 		window.loadFile(path.join(`${app.getAppPath()}/build-react/index.html`))
 	}
 })

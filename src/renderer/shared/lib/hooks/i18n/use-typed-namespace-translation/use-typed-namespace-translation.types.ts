@@ -10,11 +10,11 @@ import type {
 } from '@/app/config/i18n'
 
 type FilterKeysByNamespace<TNamespace extends keyof Resources> =
-  Extract<NamespacedTranslationKeys, `${TNamespace}:${string}`>
+	Extract<NamespacedTranslationKeys, `${TNamespace}:${string}`>
 
 export type NamespaceTranslationFunction<TNamespace extends keyof Resources> = (
 	key: FilterKeysByNamespace<TNamespace>,
-	options?: TOptions
+	options?: TOptions,
 ) => string
 
 export interface ITypedNamespaceTranslationReturn<TNamespace extends keyof Resources> {

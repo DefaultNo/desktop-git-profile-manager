@@ -1,6 +1,7 @@
 {
   "appId": "com.git-profile-manager",
   "files": ["build-electron", "build-react"],
+  "icon": "./desktop-icon.ico",
   "mac": {
     "target": "dmg"
   },

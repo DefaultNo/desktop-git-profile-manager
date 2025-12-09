@@ -8,20 +8,20 @@ import type {
 
 export type TypedTFunction<TNamespace extends keyof Resources> = (
 	key: KeysForNamespace<TNamespace>,
-	options?: TOptions
+	options?: TOptions,
 ) => string
 
 export type NamespacedTFunction = (
 	key: NamespacedTranslationKeys,
-	options?: TOptions
+	options?: TOptions,
 ) => string
 
 export type TypedNamespacedTFunction = (
 	key: NamespacedTranslationKeys,
-	options?: TOptions
+	options?: TOptions,
 ) => string
 
 export type TypedNamespaceTFunction<TNamespace extends keyof Resources> = (
 	key: KeysForNamespace<TNamespace>,
-	options?: TOptions
+	options?: TOptions,
 ) => string

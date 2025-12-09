@@ -53,7 +53,10 @@ export default tseslint.config(
         jsx: true,
         impliedStrict: true,
       },
-      project: './tsconfig.app.json',
+      project: [
+        './tsconfig.app.json',
+        './tsconfig.electron.json'
+      ],
     },
   },
 }, {
